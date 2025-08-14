@@ -9,6 +9,8 @@ set(CMAKE_CXX_STANDARD 23)
 
 add_library(logsar SHARED
         src/logger.cpp
+        tests/test_logger.cpp
+        tests/test_logger.h
 )
 
 target_include_directories(logsar
@@ -23,6 +25,9 @@ target_include_directories(logsar
 
 add_library(logsarc SHARED
         src/logger_capi.cpp
+        include/c_api/logger_c.h
+        tests/test_logger.cpp
+        tests/test_logger.h
 )
 
 target_link_libraries(logsarc PUBLIC logsar)
@@ -70,5 +75,8 @@ install(DIRECTORY include/c_api
 # Example Executable
 # -------------------------------------------------------------
 
-add_executable(example examples/basic_usage.cpp)
+add_executable(example examples/basic_usage.cpp
+        include/c_api/logger_c.h
+        tests/test_logger.cpp
+        tests/test_logger.h)
 target_link_libraries(example logsarc)
