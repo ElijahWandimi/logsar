@@ -24,11 +24,14 @@ namespace logsar {
         Logger& operator=(const Logger&) = delete;
         Logger(Logger&&) = delete;
         Logger& operator=(Logger&&) noexcept;
-        void log(const LogMessage& message);
         void info(std::string_view message);
+        void debug(std::string_view message);
+        void error(std::string_view message);
+        void warn(std::string_view message);
+        void fatal(std::string_view message);
 
     private:
         std::unique_ptr<LoggerImpl> impl_;
-
+		void log(const LogMessage& message);
     };
 }
