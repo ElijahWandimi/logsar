@@ -55,15 +55,6 @@ namespace logsar {
             log(logMessage);
         }
 
-        void fatal(std::string_view message) { // TODO: rethink, panic is not desirable
-            LogMessage logMessage{
-                LogLevel::FATAL,
-                std::chrono::system_clock::now(),
-                message
-            };
-
-            log(logMessage);
-        }
     };
 
     Logger::Logger() : impl_(std::make_unique<LoggerImpl>()) {}
@@ -85,9 +76,5 @@ namespace logsar {
 
     void Logger::warn(std::string_view message) {
         impl_ ->warn(message);
-    }
-
-    void Logger::fatal(std::string_view message) {
-        impl_ ->fatal(message);
     }
 }

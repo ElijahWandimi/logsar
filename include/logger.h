@@ -8,7 +8,6 @@
 namespace logsar {
     class LoggerImpl;
     class Sink;
-    class Formatter;
 
     /**
      * @brief The main logging class.
@@ -28,7 +27,6 @@ namespace logsar {
         void debug(std::string_view message);
         void error(std::string_view message);
         void warn(std::string_view message);
-        void fatal(std::string_view message);
 
     private:
         std::unique_ptr<LoggerImpl> impl_;
