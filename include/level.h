@@ -4,6 +4,7 @@
 
 #ifndef LOGSAR_LEVEL_H
 #define LOGSAR_LEVEL_H
+#include <string_view>
 
 namespace logsar {
     /**

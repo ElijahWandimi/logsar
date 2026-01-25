@@ -4,4 +4,5 @@
 
 #include "formatter.h"
 
-namespace logsar {}
+namespace logsar {
+}

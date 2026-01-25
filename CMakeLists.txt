@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 23)
 # logsar C++ Library
 # -------------------------------------------------------------
 add_library(logsar SHARED
-        src/logger.cpp
+        src/logger.cc
 )
 
 target_include_directories(logsar PUBLIC
@@ -43,7 +43,7 @@ target_include_directories(logsar PUBLIC
 # Tests
 # -------------------------------------------------------------
 add_executable(tests
-        tests/test_logger.cpp
+        tests/test_logger.cc
 )
 
 target_link_libraries(tests PRIVATE logsar)

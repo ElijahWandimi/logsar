@@ -8,7 +8,7 @@ namespace logsar {
         private:
         void log(const LogMessage& message) {
             std::cout << "[" << toString(message.level) <<"]"
-                <<"[" << message.timestamp << "]"
+                << "[" << message.timestamp << "]"
                 << ", Message: " << message.message << std::endl;
         }
 
